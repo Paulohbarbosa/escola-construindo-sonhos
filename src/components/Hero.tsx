@@ -1,6 +1,5 @@
 import React from 'react';
 import Logo from './Logo';
-import LogoAmarrado from './logoAmarrado';
 
 const Star: React.FC<{ className?: string }> = ({ className }) => (
   <svg className={`absolute ${className}`} viewBox="0 0 100 100" fill="#FFB74D">
