@@ -1,13 +1,13 @@
 
 import React from 'react';
-import Header from './src/components/Header';
-import Hero from './src/components/Hero';
-import About from './src/components/About';
-import Methodology from './src/components/Methodology';
-import Gallery from './src/components/Gallery';
-import Activities from './src/components/Activities';
-import Contact from './src/components/Contact';
-import Footer from './src/components/Footer';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import About from './components/About';
+import Methodology from './components/Methodology';
+import Gallery from './components/Gallery';
+import Activities from './components/Activities';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 const App: React.FC = () => {
   return (

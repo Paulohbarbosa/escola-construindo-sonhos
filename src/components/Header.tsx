@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Logo from './Logo';
 import ThemeToggle from './ThemeToggle';
+import Nuvem from '../assets/Nuvem';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,9 +31,12 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 dark:bg-brand-dark/80 shadow-md backdrop-blur-sm' : 'bg-transparent'}`}>
-      <div className="container mx-auto px-6 py-2 flex justify-between items-center">
-        <a href="#" onClick={(e) => handleScrollTo(e, '#hero')} className="w-30 md:w-40">
+    <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'shadow-xl backdrop-blur-sm' : 'bg-transparent'}`}>
+      <Nuvem 
+        className={`w-full h-auto object-cover object-center text-white dark:text-gray-500 absolute -top-1 left-0 transition-all duration-300 ${isScrolled ? 'drop-shadow-xl backdrop-blur-sm' : 'drop-shadow-none'}`}
+      />
+      <div className="container mx-auto px-6 py-2 flex justify-between items-center absolute top-0 left-0 w-full">
+        <a href="#" onClick={(e) => handleScrollTo(e, '#hero')} className="w-32 md:w-40">
           <Logo />
         </a>
         <nav className="hidden lg:flex items-center space-x-8">

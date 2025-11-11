@@ -1,10 +1,11 @@
+/** @type {import('tailwindcss').Config} */
 export default {
   darkMode: 'class',
   content: ['./index.html', './**/*.{ts,tsx}'],
   theme: {
     extend: {
       colors: {
-        // Paleta semântica principal
+        // Paleta semântica principal controlada por CSS variables
         primary: {
           DEFAULT: 'var(--color-primary)',
           hover: 'var(--color-primary-hover)',
@@ -23,7 +24,8 @@ export default {
           active: 'var(--color-neutral-active)',
           disabled: 'var(--color-neutral-disabled)'
         },
-        // Mapa de cores legacy para compatibilidade com classes existentes
+
+        // Cores legacy para compatibilidade com classes existentes
         'brand-light-blue': '#E0F7FA',
         'brand-teal': '#4DD0E1',
         'brand-orange': '#FFB74D',
@@ -33,6 +35,9 @@ export default {
         'brand-lime': '#DCE775',
         'brand-green': '#AED581',
         'brand-sky': '#90CAF9'
+      },
+      backgroundImage: {
+        'nuvem': "url('../assets/nuvemBarraManu.svg')"
       },
       fontFamily: {
         nunito: ['Nunito', 'sans-serif'],
