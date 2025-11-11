@@ -1,7 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: 'class',
-  content: ['./index.html', './**/*.{ts,tsx}'],
+  // Expandido para cobrir arquivos dentro de `src` e arquivos JS/JSX
+  content: ['./index.html', './src/**/*.{ts,tsx,js,jsx}', './**/*.{ts,tsx,js,jsx}'],
   theme: {
     extend: {
       colors: {
