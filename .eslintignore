@@ -4,3 +4,9 @@ dist/
 .vite/
 .turbo/
 *.min.js
+node_modules/
+dist/
+.cache/
+.vite/
+.turbo/
+*.min.js
