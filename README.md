@@ -5,7 +5,7 @@
 
 ## ✨ Visão Geral
 
-Aplicação frontend feita com React + Vite, utilizando Tailwind (via CDN) para estilos. O site apresenta as seções principais da escola, com foco em performance, acessibilidade e uma identidade visual leve e acolhedora. Agora conta com modo claro/escuro com persistência de preferência.
+Aplicação frontend feita com React + Vite, utilizando Tailwind via PostCSS (configurado localmente) para estilos. O site apresenta as seções principais da escola, com foco em performance, acessibilidade e uma identidade visual leve e acolhedora. Agora conta com modo claro/escuro com persistência de preferência.
 
 ## 🚀 Recursos Principais
 - Cabeçalho com navegação e rolagem suave entre seções
@@ -62,6 +62,23 @@ d:\ECS\escola-construindo-sonhos/
 Atualmente o site é estático e não requer variáveis de ambiente. Se integrar com APIs no futuro, siga a convenção:
 - `.env-dev`, `.env-homolog`, `.env-prod`
 - Carregue valores via `import.meta.env` (Vite) e nunca exponha segredos em cliente sem proxy/servidor.
+
+### Variáveis de ambiente (exemplo)
+
+Existe um arquivo de exemplo com as variáveis usadas no projeto: `.env.example`.
+
+- Copie `.env.example` para `.env` ou `.env.local` e preencha os valores.
+- Variáveis que serão expostas ao cliente devem usar o prefixo `VITE_` (por exemplo `VITE_GEMINI_API_KEY`). Acesse no código com `import.meta.env.VITE_GEMINI_API_KEY`.
+- NÃO comite arquivos `.env` contendo segredos. Se precisar guardar chaves privadas, mova a lógica para um backend ou função serverless que não seja distribuída ao cliente.
+
+Exemplo mínimo (em `.env.local`):
+
+```
+VITE_GEMINI_API_KEY=seu_valor_aqui
+VITE_API_URL=https://api.exemplo.com
+```
+
+Se quiser, posso atualizar o `vite.config.ts` para carregar apenas variáveis `VITE_...` e remover `define` que injeta chaves diretamente no bundle.
 
 ## 🧪 Como Rodar Localmente
 
