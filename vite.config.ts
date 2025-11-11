@@ -10,10 +10,10 @@ export default defineConfig(({ mode }) => {
         host: '0.0.0.0',
       },
       plugins: [react()],
-      define: {
-        'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-        'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
-      },
+      // Nota de segurança: evitar injetar chaves diretamente no bundle via `define`.
+      // Use variáveis com prefixo VITE_ (ex: VITE_GEMINI_API_KEY) e acesse-as no cliente
+      // com `import.meta.env.VITE_GEMINI_API_KEY`. Se houver segredos, mova-os para um
+      // backend/proxy — não os exponha no front-end.
       resolve: {
         alias: {
           '@': path.resolve(__dirname, '.'),

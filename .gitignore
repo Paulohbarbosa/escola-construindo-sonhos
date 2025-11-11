@@ -1,3 +1,32 @@
+# Node / Vite / editor ignores
+node_modules/
+dist/
+/.turbo/
+.turbo/
+.cache/
+
+# Environment files
+.env
+.env.*
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Optional: local devtools and build outputs
+/.vite
 # Logs
 logs
 *.log
