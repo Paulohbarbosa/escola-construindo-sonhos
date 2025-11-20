@@ -16,11 +16,13 @@ function getInitialTheme(): Theme {
   try {
     const stored = localStorage.getItem(STORAGE_KEY) as Theme | null;
     if (stored === 'light' || stored === 'dark') return stored;
-  } catch (_) {
+  } catch {
     // ignore
   }
-  const prefersDark = typeof window !== 'undefined' &&
-    window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const prefersDark =
+    typeof window !== 'undefined' &&
+    window.matchMedia &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches;
   return prefersDark ? 'dark' : 'light';
 }
 
@@ -31,20 +33,20 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const root = document.documentElement;
     if (theme === 'dark') {
       root.classList.add('dark');
-      (root.style as any).colorScheme = 'dark';
+      root.style.setProperty('color-scheme', 'dark');
     } else {
       root.classList.remove('dark');
-      (root.style as any).colorScheme = 'light';
+      root.style.setProperty('color-scheme', 'light');
     }
     try {
       localStorage.setItem(STORAGE_KEY, theme);
-    } catch (_) {
+    } catch {
       // ignore storage errors
     }
   }, [theme]);
 
   const setTheme = (t: Theme) => setThemeState(t);
-  const toggleTheme = () => setThemeState(prev => (prev === 'dark' ? 'light' : 'dark'));
+  const toggleTheme = () => setThemeState((prev) => (prev === 'dark' ? 'light' : 'dark'));
 
   const value = useMemo(() => ({ theme, toggleTheme, setTheme }), [theme]);
 

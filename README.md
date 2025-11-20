@@ -94,6 +94,25 @@ Pré-requisitos: Node.js (LTS)
    ```
    O Vite abrirá a aplicação (por padrão em `http://localhost:3000/`, podendo alternar porta se estiver em uso).
 
+### Comandos úteis
+
+- `npm run dev` — inicia servidor Vite em modo desenvolvimento
+- `npm run build` — gera build de produção
+- `npm run preview` — serve o build localmente
+- `npm run lint` — executa ESLint sobre os arquivos do projeto
+- `npm run lint:fix` — executa ESLint com auto-fix where possible
+- `npm run format` — formata o código com Prettier
+- `npm run typecheck` — executa `tsc --noEmit` para checagem de tipos
+- `npm run test` — executa testes com Vitest
+
+Observações:
+- O repositório já inclui hooks de pre-commit (Husky) que executam `lint-staged` para aplicar `eslint --fix` e `prettier --write` nos arquivos staged antes do commit.
+- Use `.env.example` como template para criar seu `.env.local` com variáveis `VITE_...`.
+
+### Integração contínua (CI)
+
+Este repositório contém um workflow de GitHub Actions em `.github/workflows/ci.yml` que roda automaticamente em pushes e pull requests para a branch `main`. O pipeline executa: `npm ci`, `npm run build`, `npm run typecheck`, `npm run lint` e `npm run test`.
+
 ## 📦 Build e Preview
 ```bash
 npm run build     # gera build de produção

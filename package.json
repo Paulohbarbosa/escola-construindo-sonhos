@@ -7,10 +7,13 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-  "lint": "eslint . --no-ignore",
+    "lint": "node ./scripts/run-eslint.cjs",
+    "lint:fix": "node ./scripts/run-eslint-fix.cjs",
     "format": "prettier --write .",
     "typecheck": "tsc --noEmit",
-    "test": "vitest",
+  "test": "vitest",
+  "test:e2e": "npx playwright test",
+  "test:e2e:headed": "npx playwright test --headed",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -19,6 +22,7 @@
     "react-dom": "^19.2.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.56.1",
     "@tailwindcss/postcss": "^4.1.17",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.0",
@@ -34,6 +38,7 @@
     "husky": "^8.0.0",
     "jsdom": "^27.1.0",
     "lint-staged": "^16.2.6",
+    "playwright": "^1.56.1",
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
     "tailwindcss": "^4.1.17",
