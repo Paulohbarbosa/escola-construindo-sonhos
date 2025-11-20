@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npm test
-npx lint-staged
+# Run lint-staged only on pre-commit to avoid running full test suites (E2E) during commits.
+# Tests (unit/e2e) can be run in CI or manually via `npm test` / `npm run test:e2e`.
+npx --no-install lint-staged
