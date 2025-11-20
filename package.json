@@ -11,12 +11,13 @@
     "lint:fix": "node ./scripts/run-eslint-fix.cjs",
     "format": "prettier --write .",
     "typecheck": "tsc --noEmit",
-  "test": "vitest",
-  "test:e2e": "npx playwright test",
-  "test:e2e:headed": "npx playwright test --headed",
+    "test": "vitest",
+    "test:e2e": "npx playwright test",
+    "test:e2e:headed": "npx playwright test --headed",
     "prepare": "husky install"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.9",
     "@phosphor-icons/react": "^2.1.10",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"

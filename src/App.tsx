@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -6,6 +5,7 @@ import About from './components/About';
 import Methodology from './components/Methodology';
 import Gallery from './components/Gallery';
 import Activities from './components/Activities';
+import Documents from './components/Documents';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -19,6 +19,7 @@ const App: React.FC = () => {
         <Methodology />
         <Gallery />
         <Activities />
+        <Documents />
         <Contact />
       </main>
       <Footer />
